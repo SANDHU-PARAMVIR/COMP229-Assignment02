@@ -1,0 +1,43 @@
+<%- include('../partials/header.ejs') -%>
+    <%- include('../partials/main_nav.ejs')-%>
+    <main class="container">        
+        <h1 class="display-4 text-center">Update Contact</h1>   
+        <hr><br>
+        <div class="row">              
+            <div class="offset-md-3 col-md-4">
+                
+                
+                <form method="POST">
+                    <div class="form-group">
+                    <label for="contactName">Name</label>
+                    <input type="text" class="form-control" id="contactName" aria-describedby="contactName" 
+                    name="contactName" placeholder="Enter Contact name" value="<%= contact.contactName %>"
+                    required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number</label>
+                        <input type="text" class="form-control" id="contactNumber" aria-describedby="contactNumber" 
+                        name="contactNumber" placeholder="Enter Contact Number" value="<%= contact.contactNumber %>"
+                        required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="email" 
+                        name="email" placeholder="Enter Email address" value="<%= contact.email %>"
+                        required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-dark btn-md purple"><i class="fas fa-edit"></i> Update Contact</button>
+                    <a href="/contact-list/delete/<%= id %>" id="deleteUpdateButton" class="btn btn-danger btn-md">
+                        <i class="fas fa-trash-alt"></i> Delete</a>
+                    <a href="/contact-list" class="btn btn-warning btn-md"><i class="fas fa-trash-restore-alt"></i>  Cancel</a>
+                </form>
+
+            </div>
+        </div>
+    </main>
+        
+    <%- include('../partials/bottom_nav.ejs')-%>
+<%- include('../partials/footer.ejs') -%>

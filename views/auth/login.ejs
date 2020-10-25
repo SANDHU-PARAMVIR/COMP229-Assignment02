@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs') -%>
+    <%- include('../partials/main_nav.ejs')-%>
+
+<main class="container">
+    <!--Message Area-->
+    <% if(messages.length > 0) {%>
+        <div class="alert alert-danger">
+            <%= messages %>
+        </div>
+    <% } %>
+    <h1 class="display-4 text-center">Login</h1>
+    <hr><br>
+    <div class="row">
+        <div class="offset-md-3 col-md-4">            
+            <form method="POST" autocomplete="off">
+                <fieldset class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control"
+                    name="username"
+                    placeholder="Enter username" 
+                    id="username" required autofocus>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control"
+                    name="password"
+                    placeholder="Enter password" 
+                    id="password" required>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <button type="submit" class="btn btn-dark purple">
+                    <i class="fas fa-sign-in-alt"></i> Login</button>
+                    <a href="/">
+                        <button type="button" class="btn btn-warning">
+                            <i class="fas fa-trash-restore-alt"></i> Cancel</button>
+                    </a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>
+    <%- include('../partials/bottom_nav.ejs')-%>
+<%- include('../partials/footer.ejs') -%>
